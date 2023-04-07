@@ -3,151 +3,106 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="PerAct: A Multi-Task Transformer for Robotic Manipulation">
-  <meta name="keywords" content="Transformers, Language Grounding, Manipulation">
+        content="ARNOLD: A Benchmark for Language-Grounded Task Learning With Continuous States in Realistic 3D Scenes">
+  <meta name="keywords" content="Benchmark, Language Grounding, Manipulation, Realistic, Continuous States">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PerAct</title>
+  <title>ARNOLD</title>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV4ZJ9PVSV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+.btn {
+  background-color: Gray;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    gtag('config', 'G-FV4ZJ9PVSV');
-  </script>
+.is-rounded {border-radius: 12px;}
 
-  <script>
-    function updateSingleVideo() {
-      var demo = document.getElementById("single-menu-demos").value;
-      var task = document.getElementById("single-menu-tasks").value;
-      var inst = document.getElementById("single-menu-instances").value;
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: Silver;
+}
 
-      console.log("single", demo, task, inst)
+a {
+	color: inherit;
+    text-decoration: none;
+}
 
-      var video = document.getElementById("multi-task-result-video");
-      video.src = "media/results/sim_rollouts/" + 
-                  "n" +
-                  demo +
-                  "-" +
-                  task +
-                  "-" +
-                  inst +
-                  ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
+.centered {
+  text-align: center;
+}
+</style>
 
-    function updateQpredVideo() {
-      var task = document.getElementById("single-menu-qpred").value;
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+<script src="https://kit.fontawesome.com/b25d0fd750.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-      console.log("qpred", task)
-
-      var video = document.getElementById("q-pred-video");
-      video.src = "media/results/qpred/" + 
-                  task + 
-                  ".mp4"
-      video.playbackRate = 1.75;
-      video.play();
-    }
-
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
-<body onload="updateSingleVideo(); updateQpredVideo();">
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" target="_blank" href="https://mohitshridhar.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" target="_blank" href="https://cliport.github.io">
-            CLIPort
-          </a>
-          <a class="navbar-item" target="_blank" href="https://askforalfred.com/">
-            ALFRED
-          </a>
-          <a class="navbar-item" target="_blank" href="http://alfworld.github.io/">
-            ALFWorld
-          </a>
-          <a class="navbar-item" target="_blank" href="https://arxiv.org/pdf/1806.03831.pdf">
-            INGRESS
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
+<body>
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Perceiver-Actor: A Multi-Task Transformer <br> for Robotic Manipulation</h1>
-          <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3>
+          <h1 class="title is-1 publication-title">ARNOLD: A Benchmark for Language-Grounded Task Learning With Continuous States in Realistic 3D Scenes</h1>
+          <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a target="_blank" href="https://mohitshridhar.com/">Mohit Shridhar</a><sup>1</sup>,</span>
+              <a target="_blank" href="https://nikepupu.github.io/">Ran Gong</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="http://lucasmanuelli.com/">Lucas Manuelli</a><sup>2</sup>,</span>
+              <a target="_blank" href="https://huangjy-pku.github.io/">Jiangyong Huang</a><sup>2,5*</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
+              <a target="_blank" href="https://www.zyz.lol/app/aboutme/aboutme.html">Yizhou Zhao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://geng-haoran.github.io/">Haoran Geng</a><sup>2,5</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://xfgao.github.io/">Xiaofeng Gao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://qywu.github.io/">Qingyang Wu</a><sup>4</sup>,
+            </span>
+            </br>
+            <span class="author-block">
+              <a target="_blank" href="https://wensi-ai.github.io/">Wensi Ai</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://www.linkedin.com/in/josephziheng/">Ziheng Zhou</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="http://web.cs.ucla.edu/~dt/">Demetri Terzopoulos</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="http://www.stat.ucla.edu/~sczhu/">Song-Chun Zhu</a><sup>2,3,5</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://buzz-beater.github.io/">Baoxiong Jia</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="https://siyuanhuang.com/">Siyuan Huang</a><sup>5</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>NVIDIA</span>
+            <span class="author-block"><sup>1</sup>University of California, Los Angeles,</span>
+            <span class="author-block"><sup>2</sup>Peking University,</span>
+            <span class="author-block"><sup>3</sup>Tsinghua University,</span>
+            </br>
+            <span class="author-block"><sup>4</sup>Columbia University,</span>
+            <span class="author-block"><sup>5</sup>National Key Laboratory of General Artificial Intelligence, BIGAI</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a target="_blank" href="paper/peract_corl2022.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-
             <!-- Arxiv Link. -->
+            <button >
             <span class="link-block">
               <a target="_blank" href="https://arxiv.org/abs/2209.05451"
                  class="external-link button is-normal is-rounded is-dark">
@@ -156,40 +111,6 @@
                 </span>
                 <span>ArXiv</span>
               </a>
-            </span>
-
-            <!-- Video Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://www.youtube.com/watch?v=TB0g52N-3_Y"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fab fa-youtube"></i>
-                </span>
-                <span>Video</span>
-              </a>
-            </span>
-
-            <!-- Talk Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://youtu.be/QcuXwmQgurE"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </span>
-                <span>Talk</span>
-              </a>
-            </span>
-
-
-            <!-- Colab Link. -->
-            <span class="link-block">
-              <a target="_blank" href="https://colab.research.google.com/drive/1wpaosDS94S0rmtGmdnP0J1TjS7mEM14V?usp=sharing"
-                 class="external-link button is-normal is-rounded is-dark">
-                <span class="icon">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                </span>
-                <span>Colab</span>
-                </a>
             </span>
 
             <!-- Code Link. -->
@@ -203,12 +124,19 @@
                 </a>
             </span>
 
+            <!-- Video Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://www.youtube.com/watch?v=TB0g52N-3_Y"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span>
+
             </div>
           </div>
-<!--           <br>
-          <br> -->
-
-
         </div>
       </div>
     </div>
