@@ -60,9 +60,27 @@ a {
 <script src="https://kit.fontawesome.com/b25d0fd750.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script>
+function UpdateTaskIllustration() {
+  var task = document.getElementById("illu-task").value;
+  console.log("illu", task)
+  var img = document.getElementById("task-illustration");
+  img.src = "assets/" + "illu-" + task + ".png"
+}
+
+function UpdateTaskDemonstration() {
+  var task = document.getElementById("demo-task").value;
+  console.log("demo", task)
+  var video = document.getElementById("task-demonstration");
+  video.src = "assets/" + "demo-" + task + ".mp4"
+  video.playbackRate = 1.75;
+  video.play();
+}
+</script>
+
 </head>
 
-<body>
+<body onload="UpdateTaskIllustration(); UpdateTaskDemonstration();">
 
 <section class="hero">
   <div class="hero-body">
@@ -340,8 +358,65 @@ a {
     <div class="rows is-centered ">
       <div class="row is-full-width">
         <h3 class="title is-4">Task</h3>
-        <br/>
-        <br/>
+        <div style="display:flex;">
+          <div style="width:50%;">
+            <p><tt>ARNOLD</tt> contains 8 tasks with various goal state varitions.
+              To succeed, the robot has to manipulate to maintain the object state within a continuous range around the goal state for a while.
+              Accomplishing these tasks requires capabilities in language grounding, friction-based
+              grasping, continuous state understanding, and precise robot motion control.
+            </p>
+          </div>
+
+          <div style="width:5%; display:flex; justify-content:center; align-items:center;">
+          </div>
+
+          <div style="width:40%; display:flex; justify-content:center; align-items:center;">
+            <img src="assets/tasks.png" alt="Task overview">
+          </div>
+        </div>
+        
+        <div class="column has-text-centered" style="margin-top: 1rem;">
+        Illustration of task 
+          <div class="select is-small">     
+            <select id="illu-task" onchange="UpdateTaskIllustration()">
+            <option value="pickup_object" selected="selected">Pickup Object</option>
+            <option value="reorient_object">Reorient Object</option>
+            <option value="open_drawer">Open Drawer</option>
+            <option value="close_drawer">Close Drawer</option>
+            <option value="open_cabinet">Open Cabinet</option>
+            <option value="close_cabinet">Close Cabinet</option>
+            <option value="pour_water">Pour Water</option>
+            <option value="transfer_water">Transfer Water</option>
+            </select>
+          </div>
+          <br/>
+          <br/>
+
+          <img id="task-illustration" src="assets/illu-pickup_object.png" width="100%" alt="Task illustration">
+        </div>
+
+        <div class="column has-text-centered" style="margin-top: 1rem;">
+          Demonstration of task 
+            <div class="select is-small">     
+              <select id="demo-task" onchange="UpdateTaskDemonstration()">
+              <option value="pickup_object" selected="selected">Pickup Object</option>
+              <option value="close_drawer">Close Drawer</option>
+              <option value="open_cabinet">Open Cabinet</option>
+              <option value="transfer_water">Transfer Water</option>
+              </select>
+            </div>
+            <br/>
+            <br/>
+  
+            <video id="task-demonstration"
+                    muted
+                    autoplay
+                    loop
+                    width="100%">
+              <source src="assets/demo-pickup_object.mp4"
+                      type="video/mp4">
+            </video>
+        </div>
 
       </div>
     </div>
