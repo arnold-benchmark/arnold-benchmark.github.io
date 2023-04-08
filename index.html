@@ -51,12 +51,11 @@ a {
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">ARNOLD: A Benchmark for Language-Grounded Task Learning With Continuous States in Realistic 3D Scenes</h1>
-          <!-- <h3 class="title is-4 conference-authors"><a target="_blank" href="https://www.robot-learning.org/">CoRL 2022</a></h3> -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a target="_blank" href="https://nikepupu.github.io/">Ran Gong</a><sup>1*</sup>,</span>
+              <a target="_blank" href="https://nikepupu.github.io/">Ran Gong</a><sup>1✶</sup>,</span>
             <span class="author-block">
-              <a target="_blank" href="https://huangjy-pku.github.io/">Jiangyong Huang</a><sup>2,5*</sup>,</span>
+              <a target="_blank" href="https://huangjy-pku.github.io/">Jiangyong Huang</a><sup>2,5✶</sup>,</span>
             <span class="author-block">
               <a target="_blank" href="https://www.zyz.lol/app/aboutme/aboutme.html">Yizhou Zhao</a><sup>1</sup>,
             </span>
@@ -99,23 +98,24 @@ a {
             <span class="author-block"><sup>5</sup>National Key Laboratory of General Artificial Intelligence, BIGAI</span>
           </div>
 
+          <p style="font-size: 0.9em; padding: 0.5em 0 0 0;">✶ indicates equal contribution</p>
+
           <div class="column has-text-centered">
             <div class="publication-links">
             <!-- Arxiv Link. -->
-            <button >
             <span class="link-block">
-              <a target="_blank" href="https://arxiv.org/abs/2209.05451"
+              <a target="_blank" href="placeholder"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                     <i class="fas fa-file"></i>
                 </span>
-                <span>ArXiv</span>
+                <span>arXiv</span>
               </a>
             </span>
 
             <!-- Code Link. -->
             <span class="link-block">
-              <a target="_blank" href="https://github.com/peract/peract"
+              <a target="_blank" href="https://github.com/arnold-benchmark/arnold"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                     <i class="fab fa-github"></i>
@@ -126,7 +126,7 @@ a {
 
             <!-- Video Link. -->
             <span class="link-block">
-              <a target="_blank" href="https://www.youtube.com/watch?v=TB0g52N-3_Y"
+              <a target="_blank" href="https://youtu.be/w-Cp1PRDWzI"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                     <i class="fab fa-youtube"></i>
@@ -147,79 +147,15 @@ a {
   <div class="container is-fullhd">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop height="100%">
-            <source src="media/intro/sim_rolling_v2.mp4"
-                    type="video/mp4">
-          </video>
-          </br>
+        <div class="has-text-centered" style="padding: 0 1em;">
+          <img src="assets/teaser.png"/>
+          <p style="text-align: justify; font-size: 0.8em;">We present <tt>ARNOLD</tt>, a benchmark that evaluates <b>language-grounded</b> task learning with <b>continuous states</b> in <b>realistic 3D scenes</b>. <tt>ARNOLD</tt> provides 8 tasks with their demonstrations for learning and a testbed for the generalization abilities of agents over (1) <span style="color: #DB3A34;">novel goal states</span>, (2) <span style="color: #963484;">novel objects</span>, and (3) <span style="color: #1AA260;">novel scenes</span>.</p>
         </div>
-        <br>
-        <h2 class="subtitle has-text-centered">
-        <span class="dperact">PerAct</span> is an end-to-end behavior-cloning agent that can learn <br><b>a single language-conditioned policy</b> for 18 RLBench tasks with <b>249 unique task variations</b>
-        </h2>
+      </br>
       </div>
     </div>
   </div>
 </section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay muted loop height="100%">
-            <source src="media/intro/1_handsan.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay muted loop height="100%">
-            <source src="media/intro/2_food_bin.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/intro/4_drawer.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay muted loop height="100%">
-            <source src="media/intro/3_marker.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/intro/5_stick.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay muted loop height="100%">
-            <source src="media/intro/7_sweeping.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-       <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay muted loop height="100%">
-            <source src="media/intro/6_blocks.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<h2 class="subtitle has-text-centered">
-</br>
-  We also train <b>one multi-task Transformer from scratch</b> on 7 real-world tasks with just <b>53 demos</b> in total.
-</h2>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -229,24 +165,7 @@ a {
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Transformers have revolutionized vision and natural language processing 
-            with their ability to scale with large datasets. But in robotic manipulation, 
-            data is both limited and expensive. Can we still benefit from Transformers with the right problem formulation? 
-          </p>
-          <p>
-            We investigate this question with <span class="dperact">PerAct</span>, a
-            language-conditioned behavior-cloning agent for multi-task 6-DoF manipulation.
-            <span class="dperact">PerAct</span> encodes language goals and RGB-D voxel observations with a 
-            <a target=”_blank” href="https://www.deepmind.com/blog/building-architectures-that-can-handle-the-worlds-data">Perceiver Transformer</a>, and outputs discretized 
-            actions by “detecting the next best voxel action”. Unlike frameworks that operate on 2D images, the voxelized observation
-            and action space provides a strong structural prior for efficiently learning 6-DoF
-            policies. 
-          </p>
-          <p>
-            With this formulation, we train <b>a single multi-task Transformer</b> for 18
-            <a target="_blank" href="https://sites.google.com/view/rlbench">RLBench</a> (with 249 variations) and 7 real-world tasks (with 18 variations) from just a few demonstrations per task. Our
-            results show that <span class="dperact">PerAct</span> significantly outperforms unstructured image-to-action
-            agents (by 34x) and 3D ConvNet baselines (by 2.8x) for a wide range of tabletop tasks.
+            Understanding the continuous states of objects is essential for task learning and planning in the real world. However, most existing task learning benchmarks assume discrete (<i>e.g.</i>, binary) object goal states, which poses challenges for the learning of complex tasks and transferring learned policy from simulated environments to the real world. Furthermore, state discretization limits a robot's ability to follow human instructions based on the grounding of actions and states. To tackle these challenges, we present <tt>ARNOLD</tt>, a benchmark that evaluates language-grounded task learning with continuous states in realistic 3D scenes. <tt>ARNOLD</tt> is comprised of 8 language-conditioned tasks that involve understanding object states and learning policies for continuous goals. To promote language-instructed learning, we provide expert demonstrations with template-generated language descriptions. We assess task performance by utilizing the latest language-conditioned policy learning models. Our results indicate that current models for language-conditioned manipulations continue to experience significant challenges in novel goal-state generalizations, scene generalizations, and object generalizations. These findings highlight the need to develop new algorithms that address this gap and underscore the potential for further research in this area.
           </p>
         </div>
       </div>
@@ -262,8 +181,7 @@ a {
     <div class="column is-two-thirds">
       <h2 class="title is-3">Video</h2>
       <div class="publication-video">
-        <iframe src="https://www.youtube.com/embed/TB0g52N-3_Y?rel=0&amp;showinfo=0"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/w-Cp1PRDWzI" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -279,44 +197,35 @@ a {
     <!-- Animation. -->
     <div class="rows is-centered ">
       <div class="row is-full-width">
-        <h2 class="title is-3"><span class="dperact">PerAct</span></h2>
-
         <!-- Interpolating. -->
-        <h3 class="title is-4">A Transformer for Detecting Actions</h3>
+        <h3 class="title is-4">Summary</h3>
         <div class="content has-text-justified">
         <!-- <br> -->
         </div>
         <p>
-          <span class="dperact">PerAct</span> is a language-conditioned behavior-cloning agent trained with supervised learning to <i>detect actions</i>. Instead of using object-detectors, instance-segmentors, or pose-estimators to represent a scene and then learning a policy, <span class="dperact">PerAct</span> directly learns <b>perceptual representations of actions</b> conditioned on language goals. This <a target="_blank" href="https://en.wikipedia.org/wiki/Ecological_psychology">action-centric approach</a> with a unified observation and action space makes <span class="dperact">PerAct</span> applicable to a broad range of tasks involving articulated objects, deformable objects, granular media, and even some non-prehensile interactions with tools.  
+          We highlight the following major points: (1) <tt>ARNOLD</tt> is built on <b>NVIDIA Isaac Sim</b>, equipped with <b>photo-realistic</b> and <b>physically-accurate</b> simulation, covering <b>40 distinctive objects</b> and <b>20 scenes</b>. (2) <tt>ARNOLD</tt> is comprised of <b>8 language-conditioned tasks</b> that involve understanding object states and learning policies for continuous goals. For each task, there are <b>7 data splits</b> including <i>i.i.d.</i> evaluation and <b>unseen generalization</b>. (3) <tt>ARNOLD</tt> provides <b>10k expert demonstrations</b> with diverse template-generated language instructions, based on thousands of human annotations. (4) We assess the task performances of the latest language-conditioned policy learning models. The results indicate that current models for language-conditioned manipulation <b>still struggle in understanding continuous states and producing precise motion control</b>. We hope these findings can foster future research to address the unsolved challenges in <b>instruction grounding</b> and <b>precise continuous motion control</b>.
         </p>
         </br>
         </br>
-        <img src="media/figures/arch.png" class="interpolation-image" 
-         alt="Interpolate start reference image." />
-        </br>
-        </br>
-          <p>
-              <span class="dperact">PerAct</span> takes as input a language goal and a voxel grid reconstructed from RGB-D sensors. The voxels are split into 3D patches (like <a target="_blank" href="https://arxiv.org/abs/2010.11929">vision transformers</a> split images into 2D patches), and the language goal is encoded with a pre-trained language model. The language and voxel features are appended together as a sequence and encoded with a <a target=”_blank” href="https://www.deepmind.com/blog/building-architectures-that-can-handle-the-worlds-data">PerceiverIO Transformer</a> to learn per-voxel features. These features are then reshaped with linear layers to predict a discretized translation, rotation, gripper open, and collision avoidance action, which can be executed with a motion-planner. 
-              <!-- This action is executed with a motion-planner after which the new observation is used to predict the next discrete action in an observe-act loop until termination.  -->
-              Overall, the voxelized observation and action space provides a strong structural prior for efficiently learning 6-DoF polices. Checkout our <a target="_blank" href="https://colab.research.google.com/drive/1wpaosDS94S0rmtGmdnP0J1TjS7mEM14V?usp=sharing">Colab Tutorial</a> for an annotated guide on implemententing <span class="dperact">PerAct</span> and training it from scratch on a single GPU.
-          </p>
-        </br>
-        </br>
-        <h3 class="title is-4">Encoding High-Dimensional Input</h3>
-          <p class="justify">
-            <img src="media/figures/perceiver.png" class="interpolation-image" width="480" align="right"
-                 style="margin:0% 4% "
-                 alt="Interpolate start reference image." />
-             The input grid is 100&times;100&times;100 = 1 million voxels. After extracting 5&times;5&times;5 patches, the input is 20&times;20&times;20 = 8000 embeddings long. Despite this long sequence, Perceiver uses a small set of latent vectors to encode the input. These latent vectors are randomly initialized and trained end-to-end. This approach decouples the depth of the Transformer self-attention layers from the dimensionality of the input space, which allows us train <span class="dperact">PerAct</span> on very large input voxel grids. Perceiver has been deployed in several domains like <a target="_blank" href="https://www.deepmind.com/publications/perceiver-ar-general-purpose-long-context-autoregressive-generation">long-context auto-regressive generation</a>, <a target="_blank" href="https://arxiv.org/abs/2204.14198">vision-language models for few-shot learning</a>, <a target="_blank" href="https://arxiv.org/abs/2107.14795">image and audio classification, and optical flow prediction.</a>
-          </p>
+
+        <h3 class="title is-4">Comparison</h3>
+        <div class="has-text-centered" style="padding: 0 1em;">
+          <p style="text-align: justify; font-size: 0.8em;"><tt>ARNOLD</tt> features continuous robot control over continuous object states with a large
+            number of demonstrations in photo-realistic scenes. Each task in <tt>ARNOLD</tt> is specified by a natural language instruction. <tt>ARNOLD</tt> also
+            leverages advanced physics simulations powered by PhysX 5.0 to simulate articulated bodies and fluids. <b>Language</b>: Task goals are specified
+            by natural language instruction. <b>Multi-Camera</b>: Robot is equipped with multiple cameras. <sup>1</sup>: A number of tasks in Maniskill use ground
+            truth semantic segmentation as input. <b>Fluid</b>: Advanced fluid simulation. <b>Physics</b>: Realistic physics simulation with realistic grasping.
+            <sup>2</sup>: RLbench-based benchmarks use simplified grasping. <b>Continuous</b>: Object state and goal state are continuous. <b>Scene</b>: Tasks are performed
+            with a realistic scene background. <b>Robot</b>: Perform actions with real robots for all tasks. <b>R</b>: Rasterization. <b>RT</b>: RayTracing. <b>Flexible
+            Material</b>: Easy to change materials and textures. <b>Generalization</b>: Systematic generalization test at different levels. Note that although
+            Maniskill shows 3D scenes in their illustration figure, they do not include 3D scenes in their benchmark.
+          <br/>
+          <img src="assets/comparison.png"/>
+        </div>
         <br/>
         <br/>
 
-        <!--/ Re-rendering. -->
-
-        <h2 class="title is-3">Results</h2>
-
-        <h3 class="title is-4">Simulation Results</h3>
+        <h3 class="title is-4">Results</h3>
 
         <div class="columns">
           <div class="column has-text-centered">
@@ -418,7 +327,7 @@ a {
       <h2 class="title is-3">Emergent Properties</h2>
 
       <h3 class="title is-4">Tracking Objects</h3>
-      A selected example of tracking an unseen hand sanitizer instance with an agent that was trained on a single object with 5 "press the handsan" demos. Since <span class="dperact">PerAct</span> focuses on actions, it doesn't need a complete representation of the bottle, and only has to predict <b><i>where</i> to press</b> the sanitizer.
+      A selected example of tracking an unseen hand sanitizer instance with an agent that was trained on a single object with 5 "press the handsan" demos. Since PerAct focuses on actions, it doesn't need a complete representation of the bottle, and only has to predict <b><i>where</i> to press</b> the sanitizer.
 
       <video id="tracking-objects"
              muted
@@ -439,29 +348,9 @@ a {
 <section class="section" id="BibTeX">
   <div class="container is-max-widescreen content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{shridhar2022peract,
-  title     = {Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation}, 
-  author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
-  booktitle = {Proceedings of the 6th Conference on Robot Learning (CoRL)},
-  year      = {2022},
-}</code></pre>
+    <pre><code>Placeholder</code></pre>
   </div>
 </section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column">
-        <div class="content has-text-centered">
-          <p>
-            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>. 
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 
 </body>
