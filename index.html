@@ -35,6 +35,25 @@ a {
 .centered {
   text-align: center;
 }
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
@@ -121,7 +140,7 @@ a {
                     <i class="fab fa-github"></i>
                 </span>
                 <span>Code</span>
-                </a>
+              </a>
             </span>
 
             <!-- Video Link. -->
@@ -149,7 +168,7 @@ a {
       <div class="container">
         <div class="has-text-centered" style="padding: 0 1em;">
           <img src="assets/teaser.png"/>
-          <p style="text-align: justify; font-size: 0.8em;">We present <tt>ARNOLD</tt>, a benchmark that evaluates <b>language-grounded</b> task learning with <b>continuous states</b> in <b>realistic 3D scenes</b>. <tt>ARNOLD</tt> provides 8 tasks with their demonstrations for learning and a testbed for the generalization abilities of agents over (1) <span style="color: #DB3A34;">novel goal states</span>, (2) <span style="color: #963484;">novel objects</span>, and (3) <span style="color: #1AA260;">novel scenes</span>.</p>
+          <p style="text-align: justify; font-size: 0.8em;">We present <tt>ARNOLD</tt>, a benchmark that evaluates <b>language-grounded</b> task learning with <span style="color: #2176FF;"><b>continuous states</b></span> in <b>realistic 3D scenes</b>. <tt>ARNOLD</tt> provides 8 tasks with their demonstrations for learning and a testbed for the generalization abilities of agents over (1) <span style="color: #DB3A34;"><b>novel goal states</b></span>, (2) <span style="color: #963484;"><b>novel objects</b></span>, and (3) <span style="color: #1AA260;"><b>novel scenes</b></span>.</p>
         </div>
       </br>
       </div>
@@ -219,6 +238,7 @@ a {
             with a realistic scene background. <b>Robot</b>: Perform actions with real robots for all tasks. <b>R</b>: Rasterization. <b>RT</b>: RayTracing. <b>Flexible
             Material</b>: Easy to change materials and textures. <b>Generalization</b>: Systematic generalization test at different levels. Note that although
             Maniskill shows 3D scenes in their illustration figure, they do not include 3D scenes in their benchmark.
+          <br/>
           <br/>
           <img src="assets/comparison.png"/>
         </div>
