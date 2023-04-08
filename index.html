@@ -87,7 +87,7 @@ a {
             <span class="author-block">
               <a target="_blank" href="https://qywu.github.io/">Qingyang Wu</a><sup>4</sup>,
             </span>
-            </br>
+            <br/>
             <span class="author-block">
               <a target="_blank" href="https://wensi-ai.github.io/">Wensi Ai</a><sup>1</sup>,
             </span>
@@ -112,7 +112,7 @@ a {
             <span class="author-block"><sup>1</sup>University of California, Los Angeles,</span>
             <span class="author-block"><sup>2</sup>Peking University,</span>
             <span class="author-block"><sup>3</sup>Tsinghua University,</span>
-            </br>
+            <br/>
             <span class="author-block"><sup>4</sup>Columbia University,</span>
             <span class="author-block"><sup>5</sup>National Key Laboratory of General Artificial Intelligence, BIGAI</span>
           </div>
@@ -162,7 +162,7 @@ a {
   </div>
 </section>
 
-<section class="hero teaser">
+<section class="hero teaser" style="margin-top: -5rem;">
   <div class="container is-fullhd">
     <div class="hero-body">
       <div class="container">
@@ -170,13 +170,12 @@ a {
           <img src="assets/teaser.png"/>
           <p style="text-align: justify; font-size: 0.8em;">We present <tt>ARNOLD</tt>, a benchmark that evaluates <b>language-grounded</b> task learning with <span style="color: #2176FF;"><b>continuous states</b></span> in <b>realistic 3D scenes</b>. <tt>ARNOLD</tt> provides 8 tasks with their demonstrations for learning and a testbed for the generalization abilities of agents over (1) <span style="color: #DB3A34;"><b>novel goal states</b></span>, (2) <span style="color: #963484;"><b>novel objects</b></span>, and (3) <span style="color: #1AA260;"><b>novel scenes</b></span>.</p>
         </div>
-      </br>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="margin-top: -4rem;">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -196,7 +195,7 @@ a {
   </div>
 
   <!-- Paper video. -->
-  <div class="columns is-centered has-text-centered">
+  <div class="columns is-centered has-text-centered" style="margin-top: -3rem;">
     <div class="column is-two-thirds">
       <h2 class="title is-3">Video</h2>
       <div class="publication-video">
@@ -212,7 +211,6 @@ a {
 
     <div class="rows">
 
-
     <!-- Animation. -->
     <div class="rows is-centered ">
       <div class="row is-full-width">
@@ -224,11 +222,11 @@ a {
         <p>
           We highlight the following major points: (1) <tt>ARNOLD</tt> is built on <b>NVIDIA Isaac Sim</b>, equipped with <b>photo-realistic</b> and <b>physically-accurate</b> simulation, covering <b>40 distinctive objects</b> and <b>20 scenes</b>. (2) <tt>ARNOLD</tt> is comprised of <b>8 language-conditioned tasks</b> that involve understanding object states and learning policies for continuous goals. For each task, there are <b>7 data splits</b> including <i>i.i.d.</i> evaluation and <b>unseen generalization</b>. (3) <tt>ARNOLD</tt> provides <b>10k expert demonstrations</b> with diverse template-generated language instructions, based on thousands of human annotations. (4) We assess the task performances of the latest language-conditioned policy learning models. The results indicate that current models for language-conditioned manipulation <b>still struggle in understanding continuous states and producing precise motion control</b>. We hope these findings can foster future research to address the unsolved challenges in <b>instruction grounding</b> and <b>precise continuous motion control</b>.
         </p>
-        </br>
-        </br>
+        <br/>
+        <br/>
 
         <h3 class="title is-4">Comparison</h3>
-        <div class="has-text-centered" style="padding: 0 1em;">
+        <div class="has-text-centered" style="padding: 0em;">
           <p style="text-align: justify; font-size: 0.8em;"><tt>ARNOLD</tt> features continuous robot control over continuous object states with a large
             number of demonstrations in photo-realistic scenes. Each task in <tt>ARNOLD</tt> is specified by a natural language instruction. <tt>ARNOLD</tt> also
             leverages advanced physics simulations powered by PhysX 5.0 to simulate articulated bodies and fluids. <b>Language</b>: Task goals are specified
@@ -237,131 +235,117 @@ a {
             <sup>2</sup>: RLbench-based benchmarks use simplified grasping. <b>Continuous</b>: Object state and goal state are continuous. <b>Scene</b>: Tasks are performed
             with a realistic scene background. <b>Robot</b>: Perform actions with real robots for all tasks. <b>R</b>: Rasterization. <b>RT</b>: RayTracing. <b>Flexible
             Material</b>: Easy to change materials and textures. <b>Generalization</b>: Systematic generalization test at different levels. Note that although
-            Maniskill shows 3D scenes in their illustration figure, they do not include 3D scenes in their benchmark.
-          <br/>
+            Maniskill shows 3D scenes in their illustration figure, they do not include 3D scenes in their benchmark.</p>
           <br/>
           <img src="assets/comparison.png"/>
         </div>
         <br/>
         <br/>
 
-        <h3 class="title is-4">Results</h3>
+        <h3 class="title is-4">Simulation Environment</h3>
+        <div style="display:flex;">
+          <div style="width:60%;">
+            <p><tt>ARNOLD</tt> is built on <a target="_blank" href="https://developer.nvidia.com/isaac-sim">Isaac Sim</a>, featuring photo-realistic and physically-accurate simulation.
+              The photo-realistic rendering is powered by GPU-enabled ray tracing, and the physics simulation is based on PhysX 5.0.
+              In <tt>ARNOLD</tt>, we assign physics parameters (<i>e.g.</i>, friction, surface tension) to objects, including rigid-body objects and fluids.
+              <tt>ARNOLD</tt> covers 40 distinct objects and 20 diverse scenes. The scenes are curated from <a target="_blank" href="https://tianchi.aliyun.com/specials/promotion/alibaba-3d-scene-dataset">3D-FRONT</a>.
+              The objects come from <a target="_blank" href="https://developer.nvidia.com/isaac-sim">Isaac Sim</a>, <a target="_blank" href="https://ai2thor.allenai.org/">AI2-THOR</a>, <a target="_blank" href="https://sapien.ucsd.edu/">SAPIEN</a>.
+              To enhance visual realism, we modified object meshes, <i>e.g.</i>, by modifying materials and adding top covers to drawers and cabinets.
+              For more stable physics-based grasping, we performed convex decomposition to create precise collision proxies for each object.
+              We use a 7-DoF Franka Emika Panda manipulator with a parallel gripper in <tt>ARNOLD</tt> for task execution.
+              There are 5 cameras around the robot to provide visual inputs.
+              We show an example of camera rendering, and visualize objects/scenes as follows.
+            </p>
+          </div>
 
-        <div class="columns">
-          <div class="column has-text-centered">
-            <h3 class="title is-5">One Multi-Task Transformer</h3>
+          <div style="width:5%; display:flex; justify-content:center; align-items:center;">
+          </div>
 
-            Trained with
-            <div class="select is-small">
-              <select id="single-menu-demos" onchange="updateSingleVideo()">
-              <option value="10">10</option>
-              <option value="100" selected="selected">100</option>
-              </select>
-            </div>
-            demos per task, evaluated on 
-            <div class="select is-small">     
-              <select id="single-menu-tasks" onchange="updateSingleVideo()">
-              <option value="open_drawer" selected="selected">open drawer</option>
-              <option value="slide_block">slide block</option>
-              <option value="sweep_to_dustpan">sweep to dustpan</option>
-              <option value="meat_off_grill">meat off grill</option>
-              <option value="turn_tap">turn tap</option>
-              <option value="put_in_drawer">put in drawer</option>
-              <option value="close_jar">close jar</option>
-              <option value="drag_stick">drag stick</option>
-              <option value="stack_blocks">stack blocks</option>
-              <option value="screw_bulb">screw bulb</option>
-              <option value="put_in_safe">put in safe</option>
-              <option value="place_wine">place wine</option>
-              <option value="put_in_cupboard">put in cupboard</option>
-              <option value="sort_shape">sort shape</option>
-              <option value="push_buttons">push buttons</option>
-              <option value="insert_peg">insert peg</option>
-              <option value="stack_cups">stack cups</option>
-              <option value="place_cups">place cups</option>
-              </select>
-            </div>
-            episode
-            <div class="select is-small">
-              <select id="single-menu-instances" onchange="updateSingleVideo()">
-              <option value="s1">01</option>
-              <option value="s2" selected="selected">02</option>
-              <option value="s3">03</option>
-              <option value="s4">04</option>
-              <option value="s5">05</option>
-              </select>
-            </div>
-            <br/>
-            <br/>
-
-            <video id="multi-task-result-video"
-                   muted
-                   autoplay
-                   loop
-                   width="100%">
-              <source src="media/results/sim_rollouts/n10-open_drawer-s2.mp4"
-                      type="video/mp4">
-            </video>
+          <div style="width:30%; display:flex; justify-content:center; align-items:center;">
+            <img src="assets/multi_view.png" alt="Multi-view cameras">
           </div>
         </div>
-        </br>
-        </br>
-
-        <h3 class="title is-4">Action Predictions</h3>
-
-        <div class="columns">
-          <div class="column has-text-centered">
-            <h3 class="title is-5">Q-Prediction Examples</h3>
-
-            Visualize predictions for   
-            <div class="select is-small is-rounded">     
-              <select id="single-menu-qpred" onchange="updateQpredVideo()">
-              <option value="tomato" selected="selected">"put the tomatoes in the top bin"</option>
-              <option value="stick">"hit the green ball with the stick"</option>
-              <option value="handsan">"press the hand san"</option>
-              <option value="tape">"put the tape in the top drawer"</option>
-              </select>
-            </div>
-          </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<video id="q-pred-video"
-       muted
-       autoplay
-       loop
-       width="100%">
-  <source src="media/results/qpred/tomato.mp4"
-          type="video/mp4">
-</video>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half">
+          <video poster="" id="scene1" autoplay muted loop height="100%">
+            <source src="assets/scene_1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column is-half">
+          <video poster="" id="scene2" autoplay muted loop height="100%">
+            <source src="assets/scene_2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
 
-<br>
-<br>
+      <div class="columns">
+        <div class="column is-half">
+          <video poster="" id="scene3" autoplay muted loop height="100%">
+            <source src="assets/scene_3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column is-half">
+          <video poster="" id="scene4" autoplay muted loop height="100%">
+            <source src="assets/scene_4.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half">
+          <video poster="" id="object1" autoplay muted loop height="100%">
+            <source src="assets/bottle.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column is-half">
+          <video poster="" id="object2" autoplay muted loop height="100%">
+            <source src="assets/drawer.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-half">
+          <video poster="" id="object3" autoplay muted loop height="100%">
+            <source src="assets/cabinet.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column is-half">
+          <video poster="" id="object4" autoplay muted loop height="100%">
+            <source src="assets/cup.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="section">
   <div class="container is-max-widescreen">
-
     <div class="rows">
-      <h2 class="title is-3">Emergent Properties</h2>
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+        <h3 class="title is-4">Task</h3>
+        <br/>
+        <br/>
 
-      <h3 class="title is-4">Tracking Objects</h3>
-      A selected example of tracking an unseen hand sanitizer instance with an agent that was trained on a single object with 5 "press the handsan" demos. Since PerAct focuses on actions, it doesn't need a complete representation of the bottle, and only has to predict <b><i>where</i> to press</b> the sanitizer.
-
-      <video id="tracking-objects"
-             muted
-             autoplay
-             loop
-             width="99%">
-        <source src="media/results/animations/handsan_tracking_v2.mp4" 
-                type="video/mp4">
-      </video>
-
+      </div>
     </div>
-
   </div>
-
 </section>
 
 
