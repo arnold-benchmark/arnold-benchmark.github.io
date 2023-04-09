@@ -252,10 +252,10 @@ function UpdateTaskDemonstration() {
             truth semantic segmentation as input. <b>Fluid</b>: Advanced fluid simulation. <b>Physics</b>: Realistic physics simulation with realistic grasping.
             <sup>2</sup>: RLbench-based benchmarks use simplified grasping. <b>Continuous</b>: Object state and goal state are continuous. <b>Scene</b>: Tasks are performed
             with a realistic scene background. <b>Robot</b>: Perform actions with real robots for all tasks. <b>R</b>: Rasterization. <b>RT</b>: RayTracing. <b>Flexible
-            Material</b>: Easy to change materials and textures. <b>Generalization</b>: Systematic generalization test at different levels. Note that although
-            Maniskill shows 3D scenes in their illustration figure, they do not include 3D scenes in their benchmark.</p>
+            Material</b>: Easy to change materials and textures. <b>Generalization</b>: Systematic generalization test at different levels.
+          </p>
           <br/>
-          <img src="assets/comparison.png"/>
+          <img src="assets/comparison.png" style="margin-top: -1rem;"/>
         </div>
         <br/>
         <br/>
@@ -361,7 +361,7 @@ function UpdateTaskDemonstration() {
         <div style="display:flex;">
           <div style="width:50%;">
             <p><tt>ARNOLD</tt> contains 8 tasks with various goal state varitions.
-              To succeed, the robot has to manipulate to maintain the object state within a continuous range around the goal state for a while.
+              To succeed, the robot has to manipulate the configurations to maintain the object state within a continuous range around the goal state for a while.
               Accomplishing these tasks requires capabilities in language grounding, friction-based
               grasping, continuous state understanding, and precise robot motion control.
             </p>
@@ -428,8 +428,16 @@ function UpdateTaskDemonstration() {
       <div class="row is-full-width">
         <h3 class="title is-4">Benchmark</h3>
         <p>
-          <tt>ARNOLD</tt>
+          To generate demonstrations for the tasks, we design several motion planners, which execute actions on sub-task stages.
+          While motion planning is challenging in particular tasks (<i>e.g.</i>, pouring water), we improve the planning pipeline by injecting some prior design and practical techniques (<i>e.g.</i>, spherical linear interpolation).
+          On the other hand, we also enrich the diversity of data by collecting 2k human annotations and performing further augmentations.
+          After validity examination, we finally collect 10k expert demonstrations in total.
+          There are 7 data splits in each task: <i>Train</i>/<i>Val</i>/<i>Test</i> for <i>i.i.d.</i> scheme, novel <i>Object</i>/<i>Scene</i>/<i>State</i> for unseen generalization, and an extra split (<i>State</i><sup>*</sup>) with arbitrary continuous goal state.
+          To provide diverse human language instructions, we prepare a template pool for each task.
+          Each template has several placeholders that can be lexicalized with various equivalent phrases.
+          Here we show the overview of <tt>ARNOLD</tt> data and a few instruction examples.
         </p>
+        <br/>
         <div style="display:flex;">
           <div style="width:45%; display:flex; justify-content:center; align-items:center;">
             <img src="assets/data.png" alt="Data overview">
@@ -448,7 +456,76 @@ function UpdateTaskDemonstration() {
             <source src="assets/generalization.mp4" type="video/mp4">
           </video>
         </div>
+
+        <h3 class="title is-4">Experiment</h3>
+        <div class="has-text-centered" style="padding: 0em;">
+          <p style="text-align: justify;">
+            We evaluate two state-of-the-art language-conditioned robotic manipulation models: <a target="_blank" href="https://sites.google.com/ucsc.edu/vlmbench/home">6D-CLIPort</a> and <a target="_blank" href="https://peract.github.io/">PerAct</a>.
+            To better investigate the performances, we add several model variants:
+            (1) PerAct without language (PerAct w/o L);
+            (2) PerAct with additional supervision on state value (PerAct<sup>†</sup>);
+            (3) Multi-task PerAct (PerAct MT).
+            In addition, we provide the evaluation results with first-phase ground truth, <i>i.e.</i>, ground truth grasping.
+          </p>
+          <br/>
+
+          <p style="text-align: justify; font-size: 0.8em;">
+            Evaluation results of the models on various tasks and splits, measured by success rate and shown in percentages.
+            The gray figures indicate performances with the first-phase ground truth.
+            For each model, the first row shows the performance on the <i>Test</i> set, and the following three rows show those on the novel splits of <i>Object</i>, <i>Scene</i>, and <i>State</i>.
+            The last row indicates the performances on the <i>Any State</i> split.
+            Tasks are abbreviated for more space. Average performances on eight tasks are appended to each row.
+            w/o L: without language instruction. <sup>†</sup>: model variants with state modeling. MT: multi-task models.
+          </p>
+          <br/>
+          <img src="assets/results.png" style="margin-top: -1rem;"/>
+        </div>
+        <br/>
+
+        <h3 class="title is-4">Sim2Real</h3>
+        <div class="has-text-centered">
+          <p style="text-align: justify;">
+            we set up a real-world environment for testing the Sim2Real transfer capabilities.
+            Specifically, we select models from single-task PerAct and use a Franka robot arm to manipulate previously unseen real-world objects with a single RGB-D camera from the left view.
+            We experiment with 2 different drawers and 5 different objects.
+            The results show that models trained in <tt>ARNOLD</tt> show preliminary Sim2Real transfer capabilities; <i>i.e.</i>, reasonable predictions for both picking up objects and manipulating drawers.
+            However, the Sim2Real gap remains, <i>e.g.</i>, strict friction.
+            We hope the flexible design and realistic simulation in <tt>ARNOLD</tt> can gradually close this gap with more diverse and fine-grained object assets.
+          </p>
+          <br/>
+        </div>
+
+        <div style="display:flex;">
+          <div style="width:2%; display:flex; justify-content:center; align-items:center;">
+          </div>
+
+          <div style="width:60%; display:flex; justify-content:center; align-items:center;">
+            <img src="assets/real.png" alt="Sim2Real">
+          </div>
+
+          <div style="width:5%; display:flex; justify-content:center; align-items:center;">
+          </div>
+
+          <div style="width:30%; display:flex; justify-content:center; align-items:center;">
+            <video poster="" id="real_video" autoplay muted loop height="100%">
+              <source src="assets/real_video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br/>
+
+        <h3 class="title is-4" style="margin-top: 2rem;">Conclusion</h3>
+        <div class="has-text-centered">
+          <p style="text-align: justify;">
+            We present <tt>ARNOLD</tt>, a benchmark for language-grounded task learning in realistic 3D interactive environments with diverse scenes, objects, and continuous object states.
+            We devise a systematic benchmark comprising eight challenging language-grounded robot tasks and evaluation splits for robot skill generalization in novel scene, object, and goal-state scenarios.
+            We conduct extensive experiments and analyses to pinpoint the limitations of the current models and identify promising research directions for grounded task learning.
+          </p>
+          <br/>
+        </div>
+
       </div>
+    </div>
     </div>
   </div>
 </section>
