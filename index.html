@@ -57,6 +57,7 @@ a {
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+<link rel="stylesheet" href="static/css/index.css">
 <script src="https://kit.fontawesome.com/b25d0fd750.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -180,7 +181,7 @@ function UpdateTaskDemonstration() {
   </div>
 </section>
 
-<section class="hero teaser" style="margin-top: -5rem;">
+<section class="hero teaser" style="margin-top: -2rem;">
   <div class="container is-fullhd">
     <div class="hero-body">
       <div class="container">
@@ -432,7 +433,7 @@ function UpdateTaskDemonstration() {
           While motion planning is challenging in particular tasks (<i>e.g.</i>, pouring water), we improve the planning pipeline by injecting some prior design and practical techniques (<i>e.g.</i>, spherical linear interpolation).
           On the other hand, we also enrich the diversity of data by collecting 2k human annotations and performing further augmentations.
           After validity examination, we finally collect 10k expert demonstrations in total.
-          There are 7 data splits in each task: <i>Train</i>/<i>Val</i>/<i>Test</i> for <i>i.i.d.</i> scheme, novel <i>Object</i>/<i>Scene</i>/<i>State</i> for unseen generalization, and an extra split (<i>State</i><sup>*</sup>) with arbitrary continuous goal state.
+          There are 7 data splits in each task: <i>Train</i>/<i>Val</i>/<i>Test</i> for <i>i.i.d.</i> scheme, novel <i>Object</i>/<i>Scene</i>/<i>State</i> for unseen generalization, and an extra split (<i>State</i>*) with arbitrary continuous goal state.
           To provide diverse human language instructions, we prepare a template pool for each task.
           Each template has several placeholders that can be lexicalized with various equivalent phrases.
           Here we show the overview of <tt>ARNOLD</tt> data and a few instruction examples.
