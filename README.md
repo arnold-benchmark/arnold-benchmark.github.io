@@ -3,12 +3,16 @@
 </h2>
 
 <div align="center" margin-bottom="6em">
-Ran Gong<sup>✶</sup>, Jiangyong Huang<sup>✶</sup>, Yizhou Zhao, Haoran Geng, Xiaofeng Gao, Qingyang Wu </br> Wensi Ai, Ziheng Zhou, Demetri Terzopoulos, Song-Chun Zhu, Baoxiong Jia, Siyuan Huang
+<b>ICCV 2023</b>
+</div>
+
+<div align="center" margin-bottom="6em">
+Ran Gong<sup>✶</sup>, Jiangyong Huang<sup>✶</sup>, Yizhou Zhao, Haoran Geng, Xiaofeng Gao, Qingyang Wu <br/> Wensi Ai, Ziheng Zhou, Demetri Terzopoulos, Song-Chun Zhu, Baoxiong Jia, Siyuan Huang
 </div>
 &nbsp;
 
 <div align="center">
-    <a href="placeholder" target="_blank">
+    <a href="https://arxiv.org/abs/2304.04321" target="_blank">
     <img src="https://img.shields.io/badge/Paper-arXiv-green" alt="Paper arXiv"></a>
     <a href="https://arnold-benchmark.github.io" target="_blank">
     <img src="https://img.shields.io/badge/Page-ARNOLD-9cf" alt="Project Page"/></a>
@@ -21,10 +25,10 @@ we present <tt>ARNOLD</tt>, a benchmark that evaluates **language-grounded** tas
 
 ## BibTex
 ```bibtex
-@article{gong2023arnold,
+@inproceedings{gong2023arnold,
   title={ARNOLD: A Benchmark for Language-Grounded Task Learning With Continuous States in Realistic 3D Scenes},
   author={Gong, Ran and Huang, Jiangyong and Zhao, Yizhou and Geng, Haoran and Gao, Xiaofeng and Wu, Qingyang and Ai, Wensi and Zhou, Ziheng and Terzopoulos, Demetri and Zhu, Song-Chun and others},
-  journal={arXiv preprint arXiv:2304.04321},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
   year={2023}
 }
 ```
